@@ -1,24 +1,28 @@
 import React from 'react';
 import {
-  BrowserRouter as Router, Route, Link, Switch,
+  BrowserRouter as Router, Route, Switch,
 } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { Normalize } from 'styled-normalize';
+import Header from './Header';
+
+import theme from './themes';
+import GlobalStyle from './GlobalStyle';
 
 function App() {
   return (
-    <Router>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/search">Search</Link></li>
-        </ul>
-      </nav>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Normalize />
+        <GlobalStyle />
+        <Header />
 
-      <Switch>
-        <Route path="/search"><Search /></Route>
-        <Route path="/"><Home /></Route>
-      </Switch>
-      <div />
-    </Router>
+        <Switch>
+          <Route path="/search"><Search /></Route>
+          <Route path="/"><Home /></Route>
+        </Switch>
+      </Router>
+    </ThemeProvider>
   );
 }
 
