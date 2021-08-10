@@ -28,7 +28,11 @@ function App() {
 
 function Home() {
   return (
-    <div>Home Page</div>
+    <div>
+      <h1>Home Page</h1>
+      <p id="about">About</p>
+      <p id="how-it-works">How It Works</p>
+    </div>
   );
 }
 
