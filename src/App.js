@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import { Normalize } from 'styled-normalize';
 import Header from './Header';
 
-import theme from './themes';
+import theme from './theme';
 import GlobalStyle from './GlobalStyle';
 
 function App() {
