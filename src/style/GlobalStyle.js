@@ -9,6 +9,10 @@ const GlobalStyle = createGlobalStyle`
     src: url("/fonts/Montserrat-Regular.woff2") format("woff2"), url("/fonts/Montserrat-Regular.woff") format("woff");
   }
 
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
   /* Montserrat Medium */
   @font-face {
     font-family: "Montserrat";
