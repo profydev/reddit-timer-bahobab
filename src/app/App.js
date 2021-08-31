@@ -4,7 +4,9 @@ import {
 } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { Normalize } from 'styled-normalize';
+
 import Header from '../common/header/Header';
+import Footer from '../common/footer/Footer';
 
 import { GlobalStyle, theme } from '../style';
 
@@ -18,6 +20,7 @@ function App() {
         <Route path="/search"><Search /></Route>
         <Route path="/"><Home /></Route>
       </Switch>
+      <Footer />
     </ThemeProvider>
   );
 }
