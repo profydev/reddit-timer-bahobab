@@ -1,17 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import * as C from './Footer.style';
 
 const Footer = () => (
   <C.Container>
-    <C.ALink href="https://ooloo.io/employers" target="_blank" rel="noreferrer">https://ooloo.io/employers</C.ALink>
+    <C.ALink href="https://profy.dev/employers" target="_blank" rel="noreferrer">https://profy.dev/employers</C.ALink>
 
-    <Link to="/">
+    {/* <Link to="/">
       <C.Logo />
-    </Link>
+    </Link> */}
 
-    <C.Link to="/terms">Terms</C.Link>
+    <C.Link to="/terms">Terms & Privacy</C.Link>
   </C.Container>
 );
 

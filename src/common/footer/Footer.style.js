@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link as UnstyledLink } from 'react-router-dom';
-import { ReactComponent as UnstyledLogo } from './logo.svg';
+import { ReactComponent as UnstyledLogo } from './footer-logo.svg';
 
 export const Container = styled.footer`
   width: 100%;
