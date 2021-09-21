@@ -13,11 +13,17 @@ const theme = {
     },
     size: {
       default: '16px',
+      small: '14px',
     },
   },
   lineHeight: {
     default: 1.69,
   },
+  size: {
+    headerHeight: '100px',
+    footerHeight: '100px',
+  },
+
 };
 
 export default theme;

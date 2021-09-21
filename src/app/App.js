@@ -9,6 +9,7 @@ import Header from '../common/header/Header';
 import Footer from '../common/footer/Footer';
 
 import { GlobalStyle, theme } from '../style';
+import * as S from './App.style';
 
 function App() {
   return (
@@ -16,10 +17,12 @@ function App() {
       <Normalize />
       <GlobalStyle />
       <Header />
-      <Switch>
-        <Route path="/search"><Search /></Route>
-        <Route path="/"><Home /></Route>
-      </Switch>
+      <S.ContentContainer>
+        <Switch>
+          <Route path="/search"><Search /></Route>
+          <Route path="/"><Home /></Route>
+        </Switch>
+      </S.ContentContainer>
       <Footer />
     </ThemeProvider>
   );

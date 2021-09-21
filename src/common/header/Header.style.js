@@ -6,7 +6,7 @@ export const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  height: ${(props) => props.theme.size.headerHight};
   width: 100%;
   padding: 0 80px;
 `;

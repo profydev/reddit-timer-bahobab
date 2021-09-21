@@ -1,29 +1,36 @@
-import styled from 'styled-components';
-import { Link as UnstyledLink } from 'react-router-dom';
+import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 import { ReactComponent as UnstyledLogo } from './footer-logo.svg';
 
 export const Container = styled.footer`
   width: 100%;
-  height: 100px;
-  padding: 0 80px;
-  margin-top: auto;
+  height: ${(props) => props.theme.size.footerHeight};
+  max-width: 980px;
+  padding: 0 20px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+`;
+
+const linkStyle = css`
+  color: ${(props) => props.theme.color.midDark};
+  font-size: ${(props) => props.theme.font.size.small};
+  text-decoration: none;
+  flex: 1;
+  
 `;
 
 export const Logo = styled(UnstyledLogo)`
-  /* width: 50px;
-  height: 50px; */
-  margin-top: 8px;
+  display: block;
+  `;
+
+export const LeftLink = styled(Link)`
+  ${linkStyle};
+  text-align: left;
 `;
 
-export const ALink = styled.a`
-  text-decoration: none;
-`;
-
-export const Link = styled(UnstyledLink)`
-  margin-left: 30px;
-  text-decoration: none;
-  color: ${(props) => props.theme.color.midDark};
+export const RightLink = styled(Link)`
+  ${linkStyle};
+  text-align: right;
 `;
