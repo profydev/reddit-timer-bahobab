@@ -18,7 +18,11 @@ export const SectionWrapper = styled.div`
 
 export const SectionHeader = styled.h2`
   margin-left: 0;
+  color: #000;
+  font-family: Bitter;
   font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
   line-height: 29px;
 `;
 
