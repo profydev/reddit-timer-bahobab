@@ -26,8 +26,8 @@ const setup = (initialPath = '/') => {
 it('navigates to home page when logo is clicked', async () => {
   setup('/search/javascript');
 
-  const logoLink = screen.getByRole('link', { name: /logo\.svg/i });
-  userEvent.click(logoLink);
+  const logoLink = screen.getAllByRole('link', { name: /logo\.svg/i });
+  userEvent.click(logoLink[0]);
 
   expect(screen.getByText(/home page/i)).toBeInTheDocument();
 });
