@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line import/prefer-default-export
 export const HeroWrapper = styled.div`
@@ -42,4 +43,14 @@ export const CtaBtn = styled.button`
   text-decoration: none;
   background-color: #FDB755;
   cursor: pointer;
+`;
+
+export const DefaultSubReddit = styled(Link)`
+  margin-bottom: 42px;
+  font-weight: 500;
+`;
+
+export const Image = styled.img`
+  width: 100%;
+  max-width: 1114px;
 `;

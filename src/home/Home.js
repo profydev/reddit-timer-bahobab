@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Hero from '../hero/Hero';
+import HeroSection from '../hero/Hero';
 import * as S from './Home.style';
 
 function Home() {
   return (
     <S.HomeWrapper>
       {/* <h1>Home Page</h1> */}
-      <Hero />
+      <HeroSection />
       <S.SectionWrapper>
         <S.SectionHeader id="about">About</S.SectionHeader>
         <S.AboutList>
