@@ -35,7 +35,7 @@ it('show a title and a subtitle', () => {
 });
 
 it('shows CTA button link is in the document and clicking navigates to "/search/javascript"', async () => {
-  const { history } = setup();
+  setup();
 
   const ctaBtn = screen.getByRole('link', { name: /Show me the best time/i });
   expect(ctaBtn).toBeInTheDocument();
@@ -53,7 +53,7 @@ it('subreddit link is in the document', async () => {
 });
 
 it('shows heatmap image is in the document and clicking navigates to "/search/javascript"', async () => {
-  const { history } = setup();
+  setup();
 
   const heatmapImage = screen.getByAltText(/heatmap screenshot/i);
   expect(heatmapImage).toBeInTheDocument();

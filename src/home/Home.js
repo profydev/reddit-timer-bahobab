@@ -8,6 +8,7 @@ function Home() {
     <S.HomeWrapper>
       {/* <h1>Home Page</h1> */}
       <HeroSection />
+      home page
       <S.SectionWrapper>
         <S.SectionHeader id="about">About</S.SectionHeader>
         <S.AboutList>

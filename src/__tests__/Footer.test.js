@@ -25,7 +25,7 @@ const setup = (initialPath = '/') => {
   return history;
 };
 
-it('navigates to the home page when logo is clicked', () => {
+it.skip('navigates to the home page when logo is clicked', () => {
   setup();
 
   const logoLinks = screen.getAllByRole('link', { name: /logo\.svg/i });
