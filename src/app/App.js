@@ -7,7 +7,7 @@ import { Normalize } from 'styled-normalize';
 
 import Header from '../common/header/Header';
 import Footer from '../common/footer/Footer';
-import Home from '../home/Home';
+import Home from '../page-home/HomePage';
 
 import { GlobalStyle, theme } from '../style';
 import * as S from './App.style';

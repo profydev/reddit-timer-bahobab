@@ -5,6 +5,7 @@ const theme = {
     midDark: '#636363',
     midLight: '#d5d5d5',
     light: '#ffffff',
+    primary: '#FDB755',
   },
   font: {
     family: {
@@ -14,6 +15,10 @@ const theme = {
     size: {
       default: '16px',
       small: '14px',
+      large: '38px',
+    },
+    letterSpacing: {
+      default: '1.5',
     },
   },
   lineHeight: {

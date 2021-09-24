@@ -1,6 +1,6 @@
 import React from 'react';
 
-import HeroSection from '../hero/Hero';
+import HeroSection from './HeroSection';
 import * as S from './Home.style';
 
 function Home() {

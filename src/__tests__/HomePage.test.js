@@ -24,6 +24,13 @@ const setup = (initialPath = '/') => {
   return { history };
 };
 
+it('subreddit link is in the document', async () => {
+  setup();
+
+  const defauktSubReddit = screen.getByText(/r\/javascript/i);
+  expect(defauktSubReddit).toBeInTheDocument();
+});
+
 it('show a title and a subtitle', () => {
   setup();
 
@@ -35,30 +42,23 @@ it('show a title and a subtitle', () => {
 });
 
 it('shows CTA button link is in the document and clicking navigates to "/search/javascript"', async () => {
-  setup();
+  const { history } = setup();
 
   const ctaBtn = screen.getByRole('link', { name: /Show me the best time/i });
   expect(ctaBtn).toBeInTheDocument();
 
   userEvent.click(ctaBtn);
-  // console.log(history);
-  // expect(history.location.pathName).toEqual('/search/javascript');
+  expect(screen.getByText(/search page/i)).toBeInTheDocument();
+  expect(history.location.pathname).toEqual('/search/javascript');
 });
 
-it('subreddit link is in the document', async () => {
-  setup();
-
-  const defauktSubReddit = screen.getByText(/r\/javascript/i);
-  expect(defauktSubReddit).toBeInTheDocument();
-});
-
-it('shows heatmap image is in the document and clicking navigates to "/search/javascript"', async () => {
-  setup();
+it('shows heatmap image is in the document and clicking navigates to "/search/javascript"', () => {
+  const { history } = setup();
 
   const heatmapImage = screen.getByAltText(/heatmap screenshot/i);
   expect(heatmapImage).toBeInTheDocument();
 
   userEvent.click(heatmapImage);
-  // console.log(history);
-  // expect(history.location.pathName).toEqual('/search/javascript');
+  expect(screen.getByText(/search page/i)).toBeInTheDocument();
+  expect(history.location.pathname).toEqual('/search/javascript');
 });
