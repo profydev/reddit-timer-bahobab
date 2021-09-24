@@ -7,6 +7,7 @@ import { Normalize } from 'styled-normalize';
 
 import Header from '../common/header/Header';
 import Footer from '../common/footer/Footer';
+import Home from '../page-home/HomePage';
 
 import { GlobalStyle, theme } from '../style';
 import * as S from './App.style';
@@ -25,16 +26,6 @@ function App() {
       </S.ContentContainer>
       <Footer />
     </ThemeProvider>
-  );
-}
-
-function Home() {
-  return (
-    <div>
-      <h1>Home Page</h1>
-      <p id="about">About</p>
-      <p id="how-it-works">How It Works</p>
-    </div>
   );
 }
 
