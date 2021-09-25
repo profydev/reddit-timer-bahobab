@@ -37,9 +37,9 @@ it.skip('navigates to the home page when logo is clicked', () => {
 it('it navigates to the emplyers site when link is cliked', () => {
   setup();
 
-  const employerLink = screen.getByRole('link', { name: /profy\.dev/i });
+  const employerLink = screen.getAllByRole('link', { name: /profy\.dev/i });
 
-  expect(employerLink.getAttribute('href')).toEqual('https://profy.dev/employers');
+  expect(employerLink[1].getAttribute('href')).toEqual('https://profy.dev/employers');
 });
 
 it('', () => {

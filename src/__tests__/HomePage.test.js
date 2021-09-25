@@ -62,3 +62,12 @@ it('shows heatmap image is in the document and clicking navigates to "/search/ja
   expect(screen.getByText(/search page/i)).toBeInTheDocument();
   expect(history.location.pathname).toEqual('/search/javascript');
 });
+
+describe('infosection', () => {
+  it('displays "About" heading', () => {
+    setup();
+
+    expect(screen.getByRole('heading', { name: /about/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /how it works/i })).toBeInTheDocument();
+  });
+});
