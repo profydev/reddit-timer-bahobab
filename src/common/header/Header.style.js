@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { Link as UnstyledLink } from 'react-router-dom';
+import { HashLink as UnstyledLink } from 'react-router-hash-link';
+// import { Link as UnstyledLink } from 'react-router-dom';
 import { ReactComponent as UnstyledLogo } from './logo.svg';
 
 export const Container = styled.header`

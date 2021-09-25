@@ -7,8 +7,11 @@ const InfoSction = () => (
     <S.SectionWrapper>
       <S.SectionHeader id="how-it-works">How It Works</S.SectionHeader>
       <p>
+        This app was created during a course on
+        <a href="https://profy.dev">profy.dev</a>
         {/* eslint-disable-next-line max-len */}
-        This app was created during a course on profy.dev with the goal to implement a pixel-perfect real-world application with professionalworkflows and tools like Kanban, ClickUp, Figma, GitHub, pull requests and code reviews. Click here for more information.
+        with the goal to implement a pixel-perfect real-world application with professional workflows and tools like Kanban, ClickUp, Figma, GitHub, pull requests and code reviews.
+        <a href="https://profy.dev/employers">Click here for more information</a>
       </p>
     </S.SectionWrapper>
     <S.SectionWrapper>

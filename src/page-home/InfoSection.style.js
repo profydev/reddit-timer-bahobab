@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SectionWrapper = styled.div`
+export const SectionWrapper = styled.section`
   max-width: 100%;
   width: 738px;
   /* display: flex;
