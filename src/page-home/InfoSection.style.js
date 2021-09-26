@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
-export const SectionWrapper = styled.section`
-  max-width: 100%;
-  width: 738px;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+export const Section = styled.section`
+  width: 100%;
+  max-width: 778px;
+  margin: 119px 0 auto;
+  padding: 0 20px;
 `;
 
 export const SectionHeader = styled.h2`
@@ -18,7 +17,7 @@ export const SectionHeader = styled.h2`
   line-height: 29px;
 `;
 
-export const AboutList = styled.ul`
+export const HowItWorksList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;

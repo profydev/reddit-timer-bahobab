@@ -1,11 +1,19 @@
 import React from 'react';
 
+import Info from './Info';
 import * as S from './InfoSection.style';
 
 const InfoSction = () => (
-  <section>
-    <S.SectionWrapper>
-      <S.SectionHeader id="how-it-works">How It Works</S.SectionHeader>
+  <S.Section>
+    <Info id="how-it-works" headline="How It Works">
+      <S.HowItWorksList>
+        <S.ListItem>We find the 500 top posts from the past year for a subreddit.</S.ListItem>
+        {/* eslint-disable-next-line max-len */}
+        <S.ListItem>The data is visualized in a heatmap grouped by weekday and hour of the day.</S.ListItem>
+        <S.ListItem>See immediately when to submit your reddit post.</S.ListItem>
+      </S.HowItWorksList>
+    </Info>
+    <Info id="about" headline="About">
       <p>
         This app was created during a course on
         <a href="https://profy.dev">profy.dev</a>
@@ -13,17 +21,8 @@ const InfoSction = () => (
         with the goal to implement a pixel-perfect real-world application with professional workflows and tools like Kanban, ClickUp, Figma, GitHub, pull requests and code reviews.
         <a href="https://profy.dev/employers">Click here for more information</a>
       </p>
-    </S.SectionWrapper>
-    <S.SectionWrapper>
-      <S.SectionHeader id="about">About</S.SectionHeader>
-      <S.AboutList>
-        <S.ListItem>We find the 500 top posts from the past year for a subreddit.</S.ListItem>
-        {/* eslint-disable-next-line max-len */}
-        <S.ListItem>The data is visualized in a heatmap grouped by weekday and hour of the day.</S.ListItem>
-        <S.ListItem>See immediately when to submit your reddit post.</S.ListItem>
-      </S.AboutList>
-    </S.SectionWrapper>
-  </section>
+    </Info>
+  </S.Section>
 );
 
 export default InfoSction;
