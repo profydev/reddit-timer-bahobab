@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import * as S from './Search.style';
@@ -7,6 +7,14 @@ function Search() {
   const defaultSubreddit = window.location.pathname.split('/')[2];
   const [subreddit, setSubreaddit] = useState(defaultSubreddit);
   const history = useHistory();
+
+  // useEffect(() => {
+  //   setSubreaddit(defaultSubreddit);
+  // }, [defaultSubreddit]);
+
+  useEffect(() => history.listen((location) => {
+    setSubreaddit(location.pathname.split('/')[2]);
+  }), [history]);
 
   const onChange = (e) => {
     setSubreaddit(e.target.value);
@@ -26,9 +34,15 @@ function Search() {
 
       <form>
         <S.Label htmlFor="subreddit">
-          r/
+          r /
         </S.Label>
-        <S.Input type="text" id="subreddit" value={subreddit} onChange={onChange} />
+        <S.Input
+          type="text"
+          id="subreddit"
+          value={subreddit}
+          onChange={onChange}
+          placeholder="Enter your subreddit"
+        />
         <S.Button onClick={onClick}>search</S.Button>
       </form>
     </S.SearchWraper>
