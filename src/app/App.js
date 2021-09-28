@@ -8,6 +8,7 @@ import { Normalize } from 'styled-normalize';
 import Header from '../common/header/Header';
 import Footer from '../common/footer/Footer';
 import Home from '../page-home/HomePage';
+import SearchPage from '../page-search';
 
 import { GlobalStyle, theme } from '../style';
 import * as S from './App.style';
@@ -20,18 +21,12 @@ function App() {
       <Header />
       <S.ContentContainer>
         <Switch>
-          <Route path="/search"><Search /></Route>
+          <Route path="/search/:subreddit"><SearchPage /></Route>
           <Route path="/"><Home /></Route>
         </Switch>
       </S.ContentContainer>
       <Footer />
     </ThemeProvider>
-  );
-}
-
-function Search() {
-  return (
-    <div>Search Page</div>
   );
 }
 

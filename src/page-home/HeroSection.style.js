@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import UnstyledButton from '../common/button';
+
 // eslint-disable-next-line import/prefer-default-export
 export const Section = styled.div`
   width: 100%;
@@ -27,22 +29,9 @@ export const SubHeading = styled.h2`
   letter-spacing: ${(props) => props.theme.font.letterSpacing.default};
 `;
 
-export const CtaBtn = styled.button`
-  width: 217px;
-  height: 36px;
+export const CtaBtn = styled(UnstyledButton)`
   margin-top: 42px;
-  padding: 0 16px;
-  border: none;
-  line-height: 36px;
-  border-radius: 4px;
-  text-transform: uppercase;
-  color: ${(props) => props.theme.color.light};
-  font-weight: 500;
-  font-size: ${(props) => props.theme.font.size.small};
-  text-align: center;
   text-decoration: none;
-  background-color: ${(props) => props.theme.color.primary};
-  cursor: pointer;
 `;
 
 export const DefaultSubReddit = styled.div`

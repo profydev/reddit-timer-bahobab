@@ -4,7 +4,7 @@ import Info from './Info';
 import * as S from './InfoSection.style';
 
 const InfoSction = () => (
-  <S.Section>
+  <S.Container as="section">
     <Info id="how-it-works" headline="How It Works">
       <S.HowItWorksList>
         <S.ListItem>We find the 500 top posts from the past year for a subreddit.</S.ListItem>
@@ -22,7 +22,7 @@ const InfoSction = () => (
         <a href="https://profy.dev/employers">Click here for more information</a>
       </p>
     </Info>
-  </S.Section>
+  </S.Container>
 );
 
 export default InfoSction;
