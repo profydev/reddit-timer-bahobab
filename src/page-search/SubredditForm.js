@@ -3,48 +3,87 @@ import { useHistory, useParams } from 'react-router-dom';
 
 import * as S from './SubredditForm.style';
 import Button from '../common/button';
+import Spinner from './Spinner';
+
+import { API_URL } from '../config';
 
 function SubredditForm() {
-  // const defaultSubreddit = window.location.pathname.split('/')[2];
   const { subreddit: defaultSubreddit } = useParams();
   const [subreddit, setSubreaddit] = useState(defaultSubreddit);
+  const [showSpinner, setShowSpinner] = useState(false);
+  // const [ loadingError, setLoadingError ] = useState(false);
+  const [loadingErrorMessage, setLoadingErrorMessage] = useState('');
+  const [userSubmit, setUserSubmit] = useState(false);
   const history = useHistory();
-
-  // useEffect(() => {
-  //   setSubreaddit(defaultSubreddit);
-  // }, [defaultSubreddit]);
-
-  useEffect(() => history.listen((location) => {
-    setSubreaddit(location.pathname.split('/')[2]);
-  }), [history]);
 
   const onChange = (e) => {
     setSubreaddit(e.target.value);
   };
 
+  const fetchData = async (sbrdt) => {
+    setShowSpinner(true);
+    try {
+      const date = new Date(Date.now());
+      const lastYear = date.getFullYear() - 1;
+
+      const response = await fetch(`${API_URL}/${sbrdt}/top.json?t=${lastYear}&limit=100`, {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+      const data = await response.json();
+      setShowSpinner(false);
+      console.log(data);
+    } catch (e) {
+      setShowSpinner(false);
+      setLoadingErrorMessage(e.message);
+    }
+  };
+
+  useEffect(() => {
+    setSubreaddit(defaultSubreddit);
+    if (!userSubmit) {
+      fetchData(defaultSubreddit);
+    } else {
+      setUserSubmit(false);
+    }
+    // history.push(`/search/${subreddit}`);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [defaultSubreddit]);
+
   const onClick = (e) => {
     e.preventDefault();
 
     history.push(`/search/${subreddit}`);
-    // console.log(history.location.pathname);
-    // window.history.replaceState(null, 'Yeeeee!', `/search/${subreddit}`);
+    setUserSubmit(true);
+    fetchData(subreddit);
   };
 
   return (
-
-    <S.Form>
-      <S.Label htmlFor="subreddit">
-        r /
-      </S.Label>
-      <S.Input
-        type="text"
-        id="subreddit"
-        value={subreddit}
-        onChange={onChange}
-        placeholder="Enter your subreddit"
-      />
-      <Button onClick={onClick}>search</Button>
-    </S.Form>
+    <>
+      <S.Form>
+        <S.Label htmlFor="subreddit">
+          r /
+        </S.Label>
+        <S.Input
+          type="text"
+          id="subreddit"
+          value={subreddit}
+          onChange={onChange}
+          placeholder="Enter your subreddit"
+        />
+        <Button onClick={onClick}>search</Button>
+      </S.Form>
+      {
+        showSpinner ? <Spinner show={showSpinner} /> : ''
+      }
+      {
+        loadingErrorMessage.length
+          ? <Spinner />
+          : ''
+      }
+    </>
   );
 }
 
