@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import * as S from './SubredditForm.style';
 import Button from '../common/button';
 import Spinner from './Spinner';
+import { useFetchPosts } from '../utils/useFetchPosts';
 
 import { API_URL } from '../config';
 
@@ -26,13 +27,9 @@ function SubredditForm() {
       const date = new Date(Date.now());
       const lastYear = date.getFullYear() - 1;
 
-      const response = await fetch(`${API_URL}/${sbrdt}/top.json?t=${lastYear}&limit=100`, {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
-        },
-      });
-      const data = await response.json();
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      const data = await useFetchPosts(`${API_URL}/${sbrdt}/top.json?t=${lastYear}&limit=100`);
+
       setShowSpinner(false);
       console.log(data);
     } catch (e) {
